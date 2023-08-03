@@ -602,11 +602,12 @@ p {
 #services .container {
   display: flex;
   margin-left: auto;
+  justify-content: space-between;
 }
 
 #services .container .swiper-slide {
   width: fit-content;
-  max-width: 25%;
+  max-width: 20%;
   margin-right: 15px;
 }
 
