@@ -604,6 +604,30 @@ p {
   margin-left: auto;
   justify-content: space-between;
   overflow-x: scroll;
+  border: 1px rgb(114, 105, 100) solid;
+  padding: 2%;
+  background-color: #a08872;
+  border-radius: 10px;
+}
+
+#serviceTitle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2vh;
+}
+
+/* * {
+  border: 1px solid red;
+} */
+
+#skills{
+  color: rgb(39, 38, 38);
+  font-size: 2em;
+}
+
+#skillsList li {
+  font-size: 1.2em;
+  color: rgb(77, 73, 73);
 }
 
 #services .container .swiper-slide {
@@ -618,7 +642,7 @@ p {
   margin: 10px 0;
   position: relative;
   font-size: 13px;
-  color: #292929;
+  color: antiquewhite;
   letter-spacing: 0.1em;
   font-weight: 500;
   text-transform: uppercase;
@@ -626,6 +650,7 @@ p {
 }
 
 .services-block .separator {
+  color: #ddcaca;
   margin: 0;
   font-size: 13px;
   line-height: 22px;
@@ -633,7 +658,7 @@ p {
 
 .services-block i {
   font-size: 44px;
-  color: #b8a07e;
+  color: #d3bc9b;
   line-height: 44px;
 }
 
