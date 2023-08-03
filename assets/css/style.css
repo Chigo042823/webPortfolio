@@ -603,6 +603,7 @@ p {
   display: flex;
   margin-left: auto;
   justify-content: space-between;
+  overflow-x: scroll;
 }
 
 #services .container .swiper-slide {
