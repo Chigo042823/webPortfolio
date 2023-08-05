@@ -1,34 +1,28 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-  $receiving_email_address = 'altheopacheco564t@gmail.com';
+require 'phpmailer/src/Exception.php';
+require 'phpmailer/src/PHPMailer.php';
+require 'phpmailer/src/SMTP.php';
 
-  if( file_exists($php_email_form = '../assets/vendor/php-email-form/php-email-form.php' )) {
-    include( $php_email_form );
-  } else {
-    die( 'Unable to load the "PHP Email Form" Library!');
-  }
+  $mail = new PHPMailer(true);
 
-  $contact = new PHP_Email_Form;
-  $contact->ajax = true;
-  
-  $contact->to = $receiving_email_address;
-  $contact->from_name = $_POST['name'];
-  $contact->from_email = $_POST['email'];
-  $contact->subject = $_POST['subject'];
+  $mail->isSMTP();
+  $mail->Host = 'smtp.gmail.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'altheopacheco564@gmail.com';
+  $mail->Password = 'okbxittrumngqxjl';
+  $mail->SMTPSecure = 'ssl';
+  $mail->Port = 465;
 
-  // Uncomment below code if you want to use SMTP to send emails. You need to enter your correct SMTP credentials
-  /*
-  $contact->smtp = array(
-    'host' => 'example.com',
-    'username' => 'example',
-    'password' => 'pass',
-    'port' => '587'
-  );
-  */
+  $mail->setFrom($_POST['email']);
+  $mail->addAddress('altheopacheco564@gmail.com');
+  $mail->isHTML(true);
+  $mail->Subject = $_POST['subject'] . ' | ' . 'From: ' . $_POST['name'] . ' / ' . $_POST['email'];
+  $mail->Body = $_POST['message'];
+  $mail->send();
 
-  $contact->add_message( $_POST['name'], 'From');
-  $contact->add_message( $_POST['email'], 'Email');
-  $contact->add_message( $_POST['message'], 'Message', 10);
+ 
 
-  echo $contact->send();
 ?>
